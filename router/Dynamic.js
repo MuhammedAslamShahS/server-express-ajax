@@ -2,12 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-const userArray = ["Working"];
+const userArray = [];
 
 router.post("/addUser", (req, res) => {
-    const { name } = req.body;
+    userArray.push(req.body);
 
-    userArray.push(name);
+    console.log(userArray);
 
     res.json("Data has beeb added successfully");
 });
